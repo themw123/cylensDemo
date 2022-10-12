@@ -11,6 +11,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
+//neu
 const Inventory = () => {
     const [refreshChild, doRefreshChild] = useState(false);
     const [isLoading, setLoading] = useState(true);
@@ -19,8 +20,8 @@ const Inventory = () => {
         setLoading(true);
         util.gcp_refresh().then(() => {
             doRefreshChild((prevState) => !prevState);
-            setLoading(false)
-        })
+            setLoading(false);
+        });
     };
 
     const columns = [
