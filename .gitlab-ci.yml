@@ -1,0 +1,17 @@
+variables:
+  REGISTRY: registry.avolens.net
+  REPO_NAME: $REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $REGISTRY
+    - docker build -t $REPO_NAME:$CI_COMMIT_SHA .
+    - docker tag $REPO_NAME:$CI_COMMIT_SHA $REPO_NAME:latest
+    - docker push $REPO_NAME:latest
+    - docker rmi $REPO_NAME:latest $REPO_NAME:$CI_COMMIT_SHA
+  only:
+    - main
