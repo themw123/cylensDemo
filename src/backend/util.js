@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://***REMOVED***:30080/api';
+const BASE_URL = 'http://xxx:30080/api';
 const API_HEADER = {
     'Content-Type': 'application/json',
     Accept: 'application/json'
