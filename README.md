@@ -12,5 +12,5 @@ Bei diesem Projekt habe ich für kurze Zeit bei einem Unternehmen gearbeitet, um
 
 
 
-template from: 
+Template von: 
 https://github.com/codedthemes/mantis-free-react-admin-template
